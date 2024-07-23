@@ -34,7 +34,7 @@ public class Problem {
 	
 
 	@Lob
-    @Column(name = "image")
+   	@Column(name = "image")
 	private byte[] image;
 	
 	public byte[] getImage() {
