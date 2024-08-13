@@ -41,8 +41,18 @@ public class UserResource {
     }
 
     @PostMapping
-    public User saveUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public ResponseEntity<String> saveUser(@RequestBody User user) {
+    	boolean exists = userService.userExists(user.getName());
+    	
+    	if(exists) {
+    		return ResponseEntity.ok("User Exits");
+    	}
+    	else {
+    		
+    		User newUser = userService.saveUser(user);
+    		return ResponseEntity.status(201).body("User Created with ID: "+newUser.getId());
+    	}
+        
     }
     
     @PostMapping("/{id}/problem")
