@@ -1,6 +1,7 @@
 package com.socialscan.rest.webservices.restfulwebservices.problem;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.socialscan.rest.webservices.restfulwebservices.user.User;
@@ -41,6 +42,16 @@ public class ProblemService {
 			problem.setAddress(address);
 			problem.setImage(image);
 			return problemRepository.save(problem);
+		}
+
+
+		public Problem getProblem(Long problemId) {
+			// TODO Auto-generated method stub
+			
+		
+			
+			return problemRepository.getProblemById(problemId);
+		
 		}
 
 }

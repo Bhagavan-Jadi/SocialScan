@@ -8,6 +8,8 @@ public interface ProblemRepository extends JpaRepository<Problem,Long> {
 
 	List<Problem> findByUserId(Long id);
 
+	Problem getProblemById(Long problemId);
+
 	
 
 }
